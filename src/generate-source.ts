@@ -14,7 +14,7 @@ interface Config {
 }
 
 // Read the JSON file
-const jsonFilePath = "./input.json"; // Replace with the actual file path
+const jsonFilePath = "files.json"; // Replace with the actual file path
 const jsonData = fs.readFileSync(jsonFilePath, "utf8");
 const config: Config = JSON.parse(jsonData);
 

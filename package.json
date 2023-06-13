@@ -5,8 +5,9 @@
     "node": ">=16.15.0"
   },
   "description": "",
-  "main": "index.js",
+  "main": "./dist/generate-source.js",
   "scripts": {
+    "generate": "npx tsc ./src/* --outDir ./dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
