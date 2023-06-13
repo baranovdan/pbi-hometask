@@ -1,0 +1,22 @@
+{
+  "name": "mega-bundler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baranovdan/pbi-hometask.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baranovdan/pbi-hometask/issues"
+  },
+  "homepage": "https://github.com/baranovdan/pbi-hometask#readme",
+  "dependencies": {
+    "tsc": "^2.0.4"
+  }
+}
