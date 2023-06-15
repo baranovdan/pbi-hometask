@@ -1,1 +1,7 @@
-check npm vulnerabilities
+audit npm vulnerabilities
+
+add proper error handling
+
+generate source files in parralel
+
+create function that automatically creates webpack config based on files.json content

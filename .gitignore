@@ -1,4 +1,6 @@
 node_modules
+
+app/output
+app/src
+
 dist
-output
-build
