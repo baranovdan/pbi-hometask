@@ -29,11 +29,16 @@ gulp.task("run", gulp.series("clean", "build", "bundle"));
 
 function cleanDirectory(directoryPath) {
   if (fs.existsSync(directoryPath)) {
-    const files = fs.readdirSync(directoryPath);
+    const items = fs.readdirSync(directoryPath);
 
-    files.forEach((file) => {
-      const filePath = path.join(directoryPath, file);
-      fs.unlinkSync(filePath);
+    items.forEach((item) => {
+      const itemPath = path.join(directoryPath, item);
+      if (fs.lstatSync(itemPath).isDirectory()) {
+        cleanDirectory(itemPath);
+        fs.rmdirSync(itemPath);
+      } else {
+        fs.unlinkSync(itemPath);
+      }
     });
   }
 }
