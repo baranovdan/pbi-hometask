@@ -27,10 +27,12 @@ gulp.task("bundle", (onCompletion) => {
 gulp.task("run", gulp.series("clean", "build", "bundle"));
 
 function cleanDirectory(directoryPath) {
-  const files = fs.readdirSync(directoryPath);
+  if (fs.existsSync(directoryPath)) {
+    const files = fs.readdirSync(directoryPath);
 
-  files.forEach((file) => {
-    const filePath = path.join(directoryPath, file);
-    fs.unlinkSync(filePath);
-  });
+    files.forEach((file) => {
+      const filePath = path.join(directoryPath, file);
+      fs.unlinkSync(filePath);
+    });
+  }
 }

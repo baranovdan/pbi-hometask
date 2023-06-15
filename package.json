@@ -7,7 +7,7 @@
   "description": "Test task for PBI application",
   "main": "./dist/generate-source.js",
   "scripts": {
-    "build": "gulp run"
+    "build": "npx gulp run"
   },
   "repository": {
     "type": "git",
