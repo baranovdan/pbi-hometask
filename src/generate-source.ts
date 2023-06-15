@@ -1,17 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
-
-interface FileInfo {
-  file: string;
-  content: string;
-  entry?: boolean;
-}
-
-interface Config {
-  destination: string;
-  bundleName: string;
-  files: FileInfo[];
-}
+import Config from "./types/config";
+import FileInfo from "./types/file-info";
 
 const appDir = "./app/";
 const filesJsonPath = path.resolve(appDir + "files.json");

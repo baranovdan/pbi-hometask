@@ -21,6 +21,7 @@ gulp.task("build", (onCompletion) => {
 });
 
 gulp.task("bundle", (onCompletion) => {
+  // add check if source file exist
   webpack(webpackConfig, () => onCompletion());
 });
 
