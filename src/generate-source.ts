@@ -12,12 +12,15 @@ const config: Config = JSON.parse(filesJson);
 if (!fs.existsSync(appSrcPath)) {
   fs.mkdirSync(appSrcPath);
 }
-console.log(appSrcPath);
 
-config.files.forEach((fileInfo: FileInfo) => {
-  const filePath = path.resolve(appDir, fileInfo.file);
-  const fileContent = fileInfo.content;
+Promise.all(
+  config.files.map(
+    async (fileInfo: FileInfo) =>
+      new Promise(() => {
+        const filePath = path.resolve(appDir, fileInfo.file);
+        const fileContent = fileInfo.content;
 
-  fs.writeFileSync(filePath, fileContent);
-});
-
+        fs.writeFileSync(filePath, fileContent);
+      })
+  )
+);
